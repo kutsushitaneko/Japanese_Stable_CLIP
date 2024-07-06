@@ -263,6 +263,7 @@ with gr.Blocks(title="Japanese Stable CLIP") as demo: # Gradio による画面�
     btn.click(fn=inference_fn, inputs=[inp, state], outputs=[out])
 
 if __name__ == "__main__":
+    demo.queue()
     demo.launch(debug=True, share=True, inbrowser=True)
 
 # %%
