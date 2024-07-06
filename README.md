@@ -5,7 +5,7 @@
 このプロジェクトは、Stability AIが開発した[Japanese Stable CLIP](https://huggingface.co/stabilityai/japanese-stable-clip-vit-l-16)モデルを使用して、画像分類を行うデモアプリケーションです。Stability AI社が公開している[デモアプリケーション](https://colab.research.google.com/github/Stability-AI/model-demo-notebooks/blob/main/japanese_stable_clip.ipynb)に若干変更を加えています。本デモアプリケーションは、NVIDIA CUDA 対応の GPU を搭載したハードウェアを使用していることを前提としています。
 
 ## Japanese Stable CLIP とは
-日本語に特化した画像言語特徴抽出モデルで、任意の日本語テキストから画像を検索する画像検索やその逆であるテキスト検索（分類）が可能です。詳しくは、Stability AI社の[ブログ](https://ja.stability.ai/blog/japanese-stable-clip)を参照してください。
+日本語に特化した画像言語特徴抽出モデルで、任意の日本語テキストから画像を検索する画像検索やその逆であるテキスト検索（分類）が可能です。学習手法には[SigLIP（Sigmoid loss for Language-Image Pre-training）](https://arxiv.org/abs/2303.15343)が採用されています。従来の対照学習（Contrastive Learning:CL）が正規化のためにバッチ内のすべての画像・テキストペアの情報を必要とするソフトマックス関数に基づいていたのに対して、SigLIPでは、各画像-テキストペアを独立してシグモイド関数を適用することで効率的な学習を実現しています。この効率的な学習により画像と言語の特徴抽出の精度が向上することが期待できます。また、[Conceptual 12M:CC12M](https://github.com/google-research-datasets/conceptual-12m)のキャプションを日本語に翻訳したデータセットなどを用いることで日本語に対応しています。詳しくは、Stability AI社の[ブログ](https://ja.stability.ai/blog/japanese-stable-clip)と [Hugging Face の Model Card](https://huggingface.co/stabilityai/japanese-stable-clip-vit-l-16) を参照してください。
 
 ## 本デモアプリケーションの機能
 - 画像のテキスト分類（画像をクエリーとしたテキスト検索）
@@ -54,6 +54,7 @@
         pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
         ```
 - [stabilityai/japanese-stable-clip-vit-l-16](https://huggingface.co/stabilityai/japanese-stable-clip-vit-l-16) でコンタクト情報の登録が完了していること
+    ![image.png](img/stability_regist_contact.png)
 
 ## セットアップ
 
