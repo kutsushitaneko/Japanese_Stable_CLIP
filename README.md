@@ -2,6 +2,9 @@
 
 ![image.png](img/UI.png)
 
+このプロジェクトの紹介記事を Qiita で公開しています。
+- [Japanese Stable CLIP による画像の分類（a.k.a. 画像によるテキストの検索）、そして画像検索に向けて](https://qiita.com/yuji-arakawa/items/042937eaf16fa00cf491)
+  
 このプロジェクトは、Stability AIが開発した[Japanese Stable CLIP](https://huggingface.co/stabilityai/japanese-stable-clip-vit-l-16)モデルを使用して、画像分類を行うデモアプリケーションです。Stability AI社が公開している[デモアプリケーション](https://colab.research.google.com/github/Stability-AI/model-demo-notebooks/blob/main/japanese_stable_clip.ipynb)に若干変更を加えています。本デモアプリケーションは、NVIDIA CUDA 対応の GPU を搭載したハードウェアを使用していることを前提としています。
 
 ## Japanese Stable CLIP とは
